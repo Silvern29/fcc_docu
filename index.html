@@ -1,0 +1,181 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta content="" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <link href="site.webmanifest" rel="manifest">
+  <link href="icon.png" rel="apple-touch-icon">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+
+  <meta content="#fafafa" name="theme-color">
+</head>
+
+<body>
+<!--[if IE]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+  your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<div class="row">
+  <input type="checkbox" id="hamburg">
+  <label for="hamburg" class="hamburg">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+  </label>
+</div>
+<nav id="navbar">
+  <ul>
+    <li>
+      <header>Array methods</header>
+    </li>
+    <li>
+      <a class="nav-link" href="#array_methods_in_JavaScript">array methods in JavaScript</a>
+    </li>
+    <li>
+      <a class="nav-link" href="#pop_push_shift_and_unshift">pop push shift and unshift</a>
+    </li>
+    <li>
+      <a class="nav-link" href="#reverse_and_splice">reverse and splice</a>
+    </li>
+    <li>
+      <a class="nav-link" href="#includes_join_and_slice">includes join and slice</a>
+    </li>
+    <li>
+      <a class="nav-link" href="#forEach_and_filter">forEach and filter</a>
+    </li>
+  </ul>
+</nav>
+
+<main id="main-doc">
+  <div class="container">
+    <section class="main-section" id="array_methods_in_JavaScript">
+      <header>array methods in JavaScript</header>
+      <h2>Some of the most common ...</h2>
+    </section>
+
+    <section class="main-section" id="pop_push_shift_and_unshift">
+      <header>pop push shift and unshift</header>
+      <h2>Mutator methods</h2>
+      <p>The pop method removes the last element from an array and returns that value to the caller. The push() method
+        adds one or more elements to the end of an array and returns the new length of the array.</p>
+      <code>
+        <ul>
+          <li>var popped = ['angel', 'clown', 'mandarin', 'sturgeon'].pop(); // 'sturgeon'</li>
+          <li>['soccer', 'baseball'].push('football', 'swimming'); // ['soccer', 'baseball', 'football', 'swimming']</li>
+        </ul>
+      </code>
+      <p>The shift method removes the element at the index zero and shifts the values at consecutive indexes down, then
+        returns the removed value. If the length property is 0, undefined is returned. The unshift method inserts the
+        given values to the beginning of an array-like object.</p>
+      <code>
+        <ul>
+          <li>var shifted = ['angel', 'clown', 'mandarin', 'surgeon'].shift(); // ['angel']</li>
+          <li>[4,5,6].unshift(1,2,3); // [1, 2, 3, 4, 5, 6]</li>
+          <li>[4,5,6].unshift(1).unshift(2).unshift(3); // [3, 2, 1, 4, 5, 6]</li>
+        </ul>
+      </code>
+    </section>
+
+    <section class="main-section" id="reverse_and_splice">
+      <header>reverse and splice</header>
+      <p>The reverse() method reverses an array in place. The first array element becomes the last, and the last array
+        element becomes the first. The method transposes the elements of the calling array object, mutating the array,
+        and returning a reference to the array.</p>
+      <p>The splice() method changes the contents of an array by removing or replacing existing elements and/or adding
+        new elements in place.</p>
+      <code>var arrDeletedItems = array.splice(start, delete, item1, item2, ...)</code>
+      <p>Start is the index at which to start changing the array. DeleteCount is an integer indicating the number of
+        elements in the array to remove from start. Item1, item2, ... are the elements to add to the array, beginning
+        from start. The method returns sn array containing the deleted elements.</p>
+    </section>
+
+    <section class="main-section" id="includes_join_and_slice">
+      <header>includes join and slice</header>
+      <h2>Accessor methods</h2>
+      <p>The includes() method determines whether an array includes a certain value among its entries, returning true or
+        false as appropriate.</p>
+      <p>The join() method creates and returns a new string by concatenating all of the elements in an array (or an
+        array-like object), separated by commas or a specified separator string. If the array has only one item, then
+        that item will be returned without using the separator.</p>
+      <code>arr.join('separator')</code>
+      <p>The slice() method returns a shallow copy of a portion of an array into a new array object selected from begin
+        to end (end not included). The original array will not be modified.</p>
+      <code>arr.slice(begin, end)</code>
+      <ul>
+        <li>Begin is a Zero-based index at which to begin extraction.</li>
+        <li>A negative index can be used, indicating an offset from the end of the sequence. slice(-2) extracts the last
+          two elements in the sequence.</li>
+        <li>If begin is undefined, slice begins from index 0. If begin is greater than the length of the sequence, an
+          empty array is returned.</li>
+        <li>End is zero-based index before which to end extraction. slice extracts up to but not including end.</li>
+        <li>A negative index can be used, indicating an offset from the end of the sequence. slice(2,-1) extracts the
+          third element through the second-to-last element in the sequence.</li>
+        <li>If end is omitted or greater than the length of the sequence, slice extracts through the end of the sequence
+          (arr.length).</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="forEach_and_filter">
+      <header>forEach and filter</header>
+      <h2>Iteration methods</h2>
+      <p>The forEach() method executes a provided function once for each array element.</p>
+      <code>
+        <ul>
+          <li>const items = ['item1', 'item2', 'item3'];</li>
+          <li>const copy = [];</li>
+          <li> // before</li>
+          <li> for (let i=0; i < items.length; i++) {</li>
+          <li class="tab">   copy.push(items[i]);</li>
+          <li> }</li>
+          <li> // after</li>
+          <li> items.forEach(function(item){</li>
+          <li class="tab">   copy.push(item);</li>
+          <li> });</li>
+        </ul>
+      </code>
+      <p>The filter() method creates a new array with all elements that pass the test implemented by the provided function.</p>
+      <code>
+        <ul>
+          <li>function isBigEnough(value) { value >= 10; }</li>
+          <li>var filtered = [12, 5, 8, 130, 44].filter(isBigEnough); // filtered is [12, 130, 44]</li>
+        </ul>
+      </code>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <p>Copyright 2019 Florian Redlinghaus</p>
+</footer>
+
+<script src="js/vendor/modernizr-3.7.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<!--<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>-->
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+  window.ga = function () {
+    ga.q.push(arguments)
+  };
+  ga.q = [];
+  ga.l = +new Date;
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga('set', 'transport', 'beacon');
+  ga('send', 'pageview')
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+</body>
+
+</html>
